@@ -1,20 +1,25 @@
-# TailwindJit
+# Phoenix + Tailwind CSS + JIT compilation example
 
-To start your Phoenix server:
+An example setup showing how Tailwind CSS's JIT compiler can be integrated into a Phoenix application.
 
-  * Install dependencies with `mix deps.get`
-  * Create and migrate your database with `mix ecto.setup`
-  * Install Node.js dependencies with `npm install` inside the `assets` directory
-  * Start Phoenix endpoint with `mix phx.server`
+I wrote more about this in a blog post, [One neat trick to getting Tailwind's JIT compiler working in Phoenix](https://sevenseacat.net/posts/2021/tailwind-jit-in-phoenix/)
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
+## Setup
 
-Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
+```
+git clone https://github.com/sevenseacat/phoenix_tailwind_jit_example.git
+cd phoenix_tailwind_jit_example
+mix deps.get
+mix ecto.setup
+npm install --prefix assets
+```
 
-## Learn more
+## Run
 
-  * Official website: https://www.phoenixframework.org/
-  * Guides: https://hexdocs.pm/phoenix/overview.html
-  * Docs: https://hexdocs.pm/phoenix
-  * Forum: https://elixirforum.com/c/phoenix-forum
-  * Source: https://github.com/phoenixframework/phoenix
+```
+mix phx.server
+```
+
+And you can visit the default homepage at http://localhost:4000.
+
+Change some of the classes used in the homepage template (`lib/tailwind_jit_web/templates/page/index.html.eex`) and Tailwind will automatically recompile your CSS for you! :sparkles:
